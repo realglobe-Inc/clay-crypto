@@ -75,13 +75,15 @@ Usage
 'use strict'
 
 const {
-  generate, publish,
+  generate,
   encrypt, decrypt
 } = require('clay-crypto')
 
 {
   const { publicKey, privateKey } = generate('', 2048)
+  let encrypted = encrypt('This is the message', privateKey)
 
+  let decrypted = decrypt(encrypt, publicKey)
 }
 
 ```
@@ -100,6 +102,8 @@ Available functions
 
 | Signature | Description |
 | ---- | ----------- |
+| `decrypt(text, rsa) -> Object` | Descript text |
+| `encrypt(text, rsa) -> Object` | Encrypt text |
 | `generate(passphrase, bits) -> Array` | Generate RSA key |
 
 
