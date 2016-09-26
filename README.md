@@ -102,9 +102,10 @@ Available functions
 
 | Signature | Description |
 | ---- | ----------- |
-| `decrypt(text, rsa) -> Object` | Descript text |
-| `encrypt(text, rsa) -> Object` | Encrypt text |
+| `decrypt(text, rsaKey) -> Object` | Decrypt text |
+| `encrypt(text, publicKey, signingKey) -> Object` | Encrypt text |
 | `generate(passphrase, bits) -> Array` | Generate RSA key |
+| `sign(text, signingKey) -> string` | Create sign |
 
 
 <!-- Section from "doc/guides/03.Functions.md.hbs" End -->
