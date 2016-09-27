@@ -105,6 +105,7 @@ Available functions
 | `decrypt(text, rsaKey) -> Object` | Decrypt text |
 | `encrypt(text, publicKey, signingKey) -> Object` | Encrypt text |
 | `generate(passphrase, bits) -> Array` | Generate RSA key |
+| `parse(-) -> RSAKey` | Parse RSAKey |
 | `sign(text, signingKey) -> string` | Create sign |
 
 

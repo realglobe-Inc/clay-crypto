@@ -1,14 +1,14 @@
 /**
- * Test case for generate.
+ * Test case for parse.
  * Runs with mocha.
  */
 'use strict'
 
-const generate = require('../lib/generate.js')
+const parse = require('../lib/parse.js')
 const assert = require('assert')
 const co = require('co')
 
-describe('generate', function () {
+describe('parse', function () {
   this.timeout(3000)
 
   before(() => co(function * () {
@@ -19,10 +19,8 @@ describe('generate', function () {
 
   }))
 
-  it('Generate', () => co(function * () {
-    let { privateKey, publicKey } = generate()
-    // assert.ok(publicKey)
-    // assert.ok(privateKey)
+  it('Parse', () => co(function * () {
+
   }))
 })
 
