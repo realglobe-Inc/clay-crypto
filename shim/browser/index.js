@@ -1,0 +1,29 @@
+/**
+ * Cryptographic utility for Clay DB
+ * @module clay-crypto
+ */
+
+'use strict';
+
+var d = function d(module) {
+  return module.default || module;
+};
+
+module.exports = {
+  get decrypt() {
+    return d(require('./decrypt'));
+  },
+  get encrypt() {
+    return d(require('./encrypt'));
+  },
+  get generate() {
+    return d(require('./generate'));
+  },
+  get parse() {
+    return d(require('./parse'));
+  },
+  get sign() {
+    return d(require('./sign'));
+  }
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbImQiLCJtb2R1bGUiLCJkZWZhdWx0IiwiZXhwb3J0cyIsImRlY3J5cHQiLCJyZXF1aXJlIiwiZW5jcnlwdCIsImdlbmVyYXRlIiwicGFyc2UiLCJzaWduIl0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7QUFLQTs7QUFFQSxJQUFJQSxJQUFJLFNBQUpBLENBQUksQ0FBQ0MsTUFBRDtBQUFBLFNBQVlBLE9BQU9DLE9BQVAsSUFBa0JELE1BQTlCO0FBQUEsQ0FBUjs7QUFFQUEsT0FBT0UsT0FBUCxHQUFpQjtBQUNmLE1BQUlDLE9BQUosR0FBZTtBQUFFLFdBQU9KLEVBQUVLLFFBQVEsV0FBUixDQUFGLENBQVA7QUFBZ0MsR0FEbEM7QUFFZixNQUFJQyxPQUFKLEdBQWU7QUFBRSxXQUFPTixFQUFFSyxRQUFRLFdBQVIsQ0FBRixDQUFQO0FBQWdDLEdBRmxDO0FBR2YsTUFBSUUsUUFBSixHQUFnQjtBQUFFLFdBQU9QLEVBQUVLLFFBQVEsWUFBUixDQUFGLENBQVA7QUFBaUMsR0FIcEM7QUFJZixNQUFJRyxLQUFKLEdBQWE7QUFBRSxXQUFPUixFQUFFSyxRQUFRLFNBQVIsQ0FBRixDQUFQO0FBQThCLEdBSjlCO0FBS2YsTUFBSUksSUFBSixHQUFZO0FBQUUsV0FBT1QsRUFBRUssUUFBUSxRQUFSLENBQUYsQ0FBUDtBQUE2QjtBQUw1QixDQUFqQiIsImZpbGUiOiJpbmRleC5qcyIsInNvdXJjZVJvb3QiOiJsaWIiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIENyeXB0b2dyYXBoaWMgdXRpbGl0eSBmb3IgQ2xheSBEQlxuICogQG1vZHVsZSBjbGF5LWNyeXB0b1xuICovXG5cbid1c2Ugc3RyaWN0J1xuXG5sZXQgZCA9IChtb2R1bGUpID0+IG1vZHVsZS5kZWZhdWx0IHx8IG1vZHVsZVxuXG5tb2R1bGUuZXhwb3J0cyA9IHtcbiAgZ2V0IGRlY3J5cHQgKCkgeyByZXR1cm4gZChyZXF1aXJlKCcuL2RlY3J5cHQnKSkgfSxcbiAgZ2V0IGVuY3J5cHQgKCkgeyByZXR1cm4gZChyZXF1aXJlKCcuL2VuY3J5cHQnKSkgfSxcbiAgZ2V0IGdlbmVyYXRlICgpIHsgcmV0dXJuIGQocmVxdWlyZSgnLi9nZW5lcmF0ZScpKSB9LFxuICBnZXQgcGFyc2UgKCkgeyByZXR1cm4gZChyZXF1aXJlKCcuL3BhcnNlJykpIH0sXG4gIGdldCBzaWduICgpIHsgcmV0dXJuIGQocmVxdWlyZSgnLi9zaWduJykpIH1cbn1cbiJdfQ==

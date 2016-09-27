@@ -1,0 +1,32 @@
+/**
+ * Create sign
+ * @function sign
+ * @param {string} text - String to be encrypted.
+ * @param {RSAKey} signingKey - RSAKey object of the sender.
+ * @returns {string}
+ */
+'use strict';
+
+var parse = require('./parse');
+
+var _require = require('cryptico');
+
+var b16to64 = _require.b16to64;
+
+var _require2 = require('clay-constants');
+
+var CryptFormat = _require2.CryptFormat;
+var DIGEST_ALGORITHM = CryptFormat.DIGEST_ALGORITHM;
+
+/** @lends sign */
+
+function sign(plaintext, signingKey) {
+  var options = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
+  var _options$algorithm = options.algorithm;
+  var algorithm = _options$algorithm === undefined ? DIGEST_ALGORITHM : _options$algorithm;
+
+  return b16to64(parse(signingKey).signString(plaintext, algorithm));
+}
+
+module.exports = sign;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNpZ24uanMiXSwibmFtZXMiOlsicGFyc2UiLCJyZXF1aXJlIiwiYjE2dG82NCIsIkNyeXB0Rm9ybWF0IiwiRElHRVNUX0FMR09SSVRITSIsInNpZ24iLCJwbGFpbnRleHQiLCJzaWduaW5nS2V5Iiwib3B0aW9ucyIsImFsZ29yaXRobSIsInNpZ25TdHJpbmciLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7OztBQU9BOztBQUVBLElBQU1BLFFBQVFDLFFBQVEsU0FBUixDQUFkOztlQUNvQkEsUUFBUSxVQUFSLEM7O0lBQVpDLE8sWUFBQUEsTzs7Z0JBQ2dCRCxRQUFRLGdCQUFSLEM7O0lBQWhCRSxXLGFBQUFBLFc7SUFDQUMsZ0IsR0FBcUJELFcsQ0FBckJDLGdCOztBQUVSOztBQUNBLFNBQVNDLElBQVQsQ0FBZUMsU0FBZixFQUEwQkMsVUFBMUIsRUFBb0Q7QUFBQSxNQUFkQyxPQUFjLHlEQUFKLEVBQUk7QUFBQSwyQkFDWEEsT0FEVyxDQUM1Q0MsU0FENEM7QUFBQSxNQUM1Q0EsU0FENEMsc0NBQ2hDTCxnQkFEZ0M7O0FBRWxELFNBQU9GLFFBQVFGLE1BQU1PLFVBQU4sRUFBa0JHLFVBQWxCLENBQTZCSixTQUE3QixFQUF3Q0csU0FBeEMsQ0FBUixDQUFQO0FBQ0Q7O0FBRURFLE9BQU9DLE9BQVAsR0FBaUJQLElBQWpCIiwiZmlsZSI6InNpZ24uanMiLCJzb3VyY2VSb290IjoibGliIiwic291cmNlc0NvbnRlbnQiOlsiLyoqXG4gKiBDcmVhdGUgc2lnblxuICogQGZ1bmN0aW9uIHNpZ25cbiAqIEBwYXJhbSB7c3RyaW5nfSB0ZXh0IC0gU3RyaW5nIHRvIGJlIGVuY3J5cHRlZC5cbiAqIEBwYXJhbSB7UlNBS2V5fSBzaWduaW5nS2V5IC0gUlNBS2V5IG9iamVjdCBvZiB0aGUgc2VuZGVyLlxuICogQHJldHVybnMge3N0cmluZ31cbiAqL1xuJ3VzZSBzdHJpY3QnXG5cbmNvbnN0IHBhcnNlID0gcmVxdWlyZSgnLi9wYXJzZScpXG5jb25zdCB7IGIxNnRvNjQgfSA9IHJlcXVpcmUoJ2NyeXB0aWNvJylcbmNvbnN0IHsgQ3J5cHRGb3JtYXQgfSA9IHJlcXVpcmUoJ2NsYXktY29uc3RhbnRzJylcbmNvbnN0IHsgRElHRVNUX0FMR09SSVRITSB9ID0gQ3J5cHRGb3JtYXRcblxuLyoqIEBsZW5kcyBzaWduICovXG5mdW5jdGlvbiBzaWduIChwbGFpbnRleHQsIHNpZ25pbmdLZXksIG9wdGlvbnMgPSB7fSkge1xuICBsZXQgeyBhbGdvcml0aG0gPSBESUdFU1RfQUxHT1JJVEhNIH0gPSBvcHRpb25zXG4gIHJldHVybiBiMTZ0bzY0KHBhcnNlKHNpZ25pbmdLZXkpLnNpZ25TdHJpbmcocGxhaW50ZXh0LCBhbGdvcml0aG0pKVxufVxuXG5tb2R1bGUuZXhwb3J0cyA9IHNpZ25cbiJdfQ==

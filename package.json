@@ -1,6 +1,6 @@
 {
   "name": "clay-crypto",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Cryptographic utility for Clay DB",
   "main": "lib",
   "browser": "ci/browser",

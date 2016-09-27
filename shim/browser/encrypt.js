@@ -1,0 +1,37 @@
+/**
+ * Encrypt text
+ * @function encrypt
+ * @param {string} text - String to be encrypted.
+ * @param {string} publicKey - Public key string of the recipient.
+ * @param {RSAKey} signingKey - RSAKey object of the sender.
+ * @returns {Object} - Encrypted text
+ */
+'use strict';
+
+var parse = require('./parse');
+
+var _require = require('cryptico');
+
+var doEncrypt = _require.encrypt;
+
+var _require2 = require('clay-constants');
+
+var LogPrefixes = _require2.LogPrefixes;
+var CRYPTO_PREFIX = LogPrefixes.CRYPTO_PREFIX;
+
+/** @lends encrypt */
+
+function encrypt(text, publicKey, signingKey) {
+  var _doEncrypt = doEncrypt(text, publicKey, parse(signingKey));
+
+  var status = _doEncrypt.status;
+  var cipher = _doEncrypt.cipher;
+
+  if (status !== 'success') {
+    throw new Error(CRYPTO_PREFIX + ' Encrypt failed');
+  }
+  return cipher;
+}
+
+module.exports = encrypt;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImVuY3J5cHQuanMiXSwibmFtZXMiOlsicGFyc2UiLCJyZXF1aXJlIiwiZG9FbmNyeXB0IiwiZW5jcnlwdCIsIkxvZ1ByZWZpeGVzIiwiQ1JZUFRPX1BSRUZJWCIsInRleHQiLCJwdWJsaWNLZXkiLCJzaWduaW5nS2V5Iiwic3RhdHVzIiwiY2lwaGVyIiwiRXJyb3IiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7QUFRQTs7QUFFQSxJQUFNQSxRQUFRQyxRQUFRLFNBQVIsQ0FBZDs7ZUFDK0JBLFFBQVEsVUFBUixDOztJQUFkQyxTLFlBQVRDLE87O2dCQUNnQkYsUUFBUSxnQkFBUixDOztJQUFoQkcsVyxhQUFBQSxXO0lBQ0FDLGEsR0FBa0JELFcsQ0FBbEJDLGE7O0FBRVI7O0FBQ0EsU0FBU0YsT0FBVCxDQUFrQkcsSUFBbEIsRUFBd0JDLFNBQXhCLEVBQW1DQyxVQUFuQyxFQUErQztBQUFBLG1CQUNwQk4sVUFBVUksSUFBVixFQUFnQkMsU0FBaEIsRUFBMkJQLE1BQU1RLFVBQU4sQ0FBM0IsQ0FEb0I7O0FBQUEsTUFDdkNDLE1BRHVDLGNBQ3ZDQSxNQUR1QztBQUFBLE1BQy9CQyxNQUQrQixjQUMvQkEsTUFEK0I7O0FBRTdDLE1BQUlELFdBQVcsU0FBZixFQUEwQjtBQUN4QixVQUFNLElBQUlFLEtBQUosQ0FBYU4sYUFBYixxQkFBTjtBQUNEO0FBQ0QsU0FBT0ssTUFBUDtBQUNEOztBQUVERSxPQUFPQyxPQUFQLEdBQWlCVixPQUFqQiIsImZpbGUiOiJlbmNyeXB0LmpzIiwic291cmNlUm9vdCI6ImxpYiIsInNvdXJjZXNDb250ZW50IjpbIi8qKlxuICogRW5jcnlwdCB0ZXh0XG4gKiBAZnVuY3Rpb24gZW5jcnlwdFxuICogQHBhcmFtIHtzdHJpbmd9IHRleHQgLSBTdHJpbmcgdG8gYmUgZW5jcnlwdGVkLlxuICogQHBhcmFtIHtzdHJpbmd9IHB1YmxpY0tleSAtIFB1YmxpYyBrZXkgc3RyaW5nIG9mIHRoZSByZWNpcGllbnQuXG4gKiBAcGFyYW0ge1JTQUtleX0gc2lnbmluZ0tleSAtIFJTQUtleSBvYmplY3Qgb2YgdGhlIHNlbmRlci5cbiAqIEByZXR1cm5zIHtPYmplY3R9IC0gRW5jcnlwdGVkIHRleHRcbiAqL1xuJ3VzZSBzdHJpY3QnXG5cbmNvbnN0IHBhcnNlID0gcmVxdWlyZSgnLi9wYXJzZScpXG5jb25zdCB7IGVuY3J5cHQ6IGRvRW5jcnlwdCB9ID0gcmVxdWlyZSgnY3J5cHRpY28nKVxuY29uc3QgeyBMb2dQcmVmaXhlcyB9ID0gcmVxdWlyZSgnY2xheS1jb25zdGFudHMnKVxuY29uc3QgeyBDUllQVE9fUFJFRklYIH0gPSBMb2dQcmVmaXhlc1xuXG4vKiogQGxlbmRzIGVuY3J5cHQgKi9cbmZ1bmN0aW9uIGVuY3J5cHQgKHRleHQsIHB1YmxpY0tleSwgc2lnbmluZ0tleSkge1xuICBsZXQgeyBzdGF0dXMsIGNpcGhlciB9ID0gZG9FbmNyeXB0KHRleHQsIHB1YmxpY0tleSwgcGFyc2Uoc2lnbmluZ0tleSkpXG4gIGlmIChzdGF0dXMgIT09ICdzdWNjZXNzJykge1xuICAgIHRocm93IG5ldyBFcnJvcihgJHtDUllQVE9fUFJFRklYfSBFbmNyeXB0IGZhaWxlZGApXG4gIH1cbiAgcmV0dXJuIGNpcGhlclxufVxuXG5tb2R1bGUuZXhwb3J0cyA9IGVuY3J5cHRcbiJdfQ==
