@@ -21,8 +21,8 @@ describe('generate', function () {
 
   it('Generate', () => co(function * () {
     let { privateKey, publicKey } = generate()
-    // assert.ok(publicKey)
-    // assert.ok(privateKey)
+    assert.ok(publicKey)
+    assert.ok(privateKey)
   }))
 })
 
