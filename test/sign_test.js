@@ -26,6 +26,13 @@ describe('sign', function () {
     let signed02 = sign('This is the text', privateKey, {})
     assert.equal(signed01, signed02)
   }))
+
+  it('Sign an object', () => co(function * () {
+    const { privateKey } = generate('', 1024)
+    let signed01 = sign({ foo: 'This is foo' }, privateKey, {})
+    let signed02 = sign({ foo: 'This is foo' }, privateKey, {})
+    assert.equal(signed01, signed02)
+  }))
 })
 
 /* global describe, before, after, it */
