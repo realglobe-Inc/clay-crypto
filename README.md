@@ -131,8 +131,10 @@ This software is released under the [MIT License](https://github.com/realglobe-I
 Links
 ------
 
++ [ClayDB][clay_d_b_url]
 + [cryptico][cryptico_url]
 
+[clay_d_b_url]: https://github.com/realglobe-Inc/claydb
 [cryptico_url]: https://github.com/wwwtyro/cryptico
 
 <!-- Links End -->
