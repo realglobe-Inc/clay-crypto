@@ -1,10 +1,21 @@
 language: node_js
 node_js:
 - '6'
+before_install:
+# TODO OSS
+# - npm i npm-cli-login -g
+# - npm-cli-login -u "${NPM_USER}" -p "${NPM_PASSWORD}" -e "${NPM_EMAIL}"
+# - npm who
+- echo "registry = https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual" > $HOME/.npmrc
+- curl -u${NPM_USER}:${NPM_PASSWORD} "https://realglobe.artifactoryonline.com/realglobe/api/npm/auth" >> $HOME/.npmrc
+- cat $HOME/.npmrc
 install:
 - npm install
 script:
 - ./ci/build.js
+- ./ci/shim.js
 - ./ci/test.js
+after_success:
+- ./ci/travis/publish.js
 env:
-  secure: "cVO+YTPFJr0+6+yVpBd6z6PLzRkAd9nZ+ct97DkOBbECCyhmvx2eqYysv/gnBo4EKdqL7lnWuM3p5wGvlcmzNYd5DqxXGhcbicH9BD/EPhD1oQx7iBNDOWxxsWo94reW8JUmFMhkDtKXwExSZOZ3MZIx4S56Y91r2wmRqFv8QjWEJvkQTbrL+IRM4jqI9HkR/rUYtyXWjv7mSc8Oq99PvV9I12FeihnffWFmzbG0RPGLLmusW1VgT6dRx1wG78ZhgoJqFoQOZSs5HBBdDXx90Ucjm8Yzf2zbSoZFQbYuX15ICv2heVOVjaSSJfgjim6Yp4uCgv0f+JFZ6/yoCE4iso7R0cmZzpXa2aHW/UB8w+2kZRsITAUBt6DRjVaE37j+IOAN+0nOpfekuoxR0ipZtn3rVXA7MYiEX+CjZhWTfgdzWjHQycz7feG62XBYa/ZTaAfkXRQ/a2J8AmmuhdIku63nIufmRw3YEhuDtOAYUXlW9eGqyjFrDB9OF3aTLKTUJ+kOtHlvwpvR3PrdtNFDc+bT7MWBqCifM8vqLBaVT2lo92OePb1dspHqrp9kp74OqV1G7Fepj3+iIfqA1OjTJwPfI5sHdB5jRmp0j1+B4tp8APa42cAGHtOEDuEZ1PzsmWo6nqLWSvSA6eEQpe/6m0vcKw3ZrlzNvLDVeiqm7Yw="
+  secure: "qpjAyaaZMr3WaiqG8MPALkaPCWEtyyxhW/UyOYd3+Zho6JXsmbD73o1VXs6liu53f9dLFJCMYc9Gdjr3xU0PdGRqDvIkIZR8JRGWZltSiSwLnSuGQtufolYHeU1fS0vzF0VcaXk50j0l8ij+f/Bqfvwc3G8rtlJqO0nfL/iPy2WKYQbMY/3gue3TYL3NKY5Dv4acZ4erLpSux4/f2XNu4OtvMz1EMrHFIChHK0o1LFDg7oEj1pnIN/uyLeaHBSb/KCZzj8yjuDajkOZcy/8IUrCpvPXwBqNXAr32AOnQVHM/iCr/KA0pQI4lYDKxu7J77gDxGWWBCC+YNfMzBGQ297AfNINVNyaIv2b0+9IN0GDdWf/YSeL0VoIldKgKkM5CcuR2FTrmCzprCyFV94SnirNhSuHeUjmKn/POvwBN80mf+SQwD+EDuY4yEursASVroutTxnJZG6my0oF7D5F+DDTfSmBoZuPdHuCZgS4xfo7pcCICJVFXQ/E+ld11HDIgZLgOxV2b2gYMDNo0mvGUDlintI+WHQt2Y6dBUv9d+4qG57VhjFlUG6dIOCkRu/h2K4FYHbGC2H1FmeHHOjfaFdNHnzUt+cU0sl+PypSjlRcu6c3nqVgFbhdK1lYRv7AOC7wn6Pa8P6tFevnY9WR5rJAfabobWDQXFBy5hJsZt6M="
