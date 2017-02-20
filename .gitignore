@@ -32,3 +32,5 @@ tmp
 
 shim/node
 shim/browser
+
+.npmrc

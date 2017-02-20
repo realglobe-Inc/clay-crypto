@@ -6,5 +6,5 @@ install:
 script:
 - ./ci/build.js
 - ./ci/test.js
-- ./ci/cover.js
-- ./ci/report.js
+env:
+  secure: "cVO+YTPFJr0+6+yVpBd6z6PLzRkAd9nZ+ct97DkOBbECCyhmvx2eqYysv/gnBo4EKdqL7lnWuM3p5wGvlcmzNYd5DqxXGhcbicH9BD/EPhD1oQx7iBNDOWxxsWo94reW8JUmFMhkDtKXwExSZOZ3MZIx4S56Y91r2wmRqFv8QjWEJvkQTbrL+IRM4jqI9HkR/rUYtyXWjv7mSc8Oq99PvV9I12FeihnffWFmzbG0RPGLLmusW1VgT6dRx1wG78ZhgoJqFoQOZSs5HBBdDXx90Ucjm8Yzf2zbSoZFQbYuX15ICv2heVOVjaSSJfgjim6Yp4uCgv0f+JFZ6/yoCE4iso7R0cmZzpXa2aHW/UB8w+2kZRsITAUBt6DRjVaE37j+IOAN+0nOpfekuoxR0ipZtn3rVXA7MYiEX+CjZhWTfgdzWjHQycz7feG62XBYa/ZTaAfkXRQ/a2J8AmmuhdIku63nIufmRw3YEhuDtOAYUXlW9eGqyjFrDB9OF3aTLKTUJ+kOtHlvwpvR3PrdtNFDc+bT7MWBqCifM8vqLBaVT2lo92OePb1dspHqrp9kp74OqV1G7Fepj3+iIfqA1OjTJwPfI5sHdB5jRmp0j1+B4tp8APa42cAGHtOEDuEZ1PzsmWo6nqLWSvSA6eEQpe/6m0vcKw3ZrlzNvLDVeiqm7Yw="
