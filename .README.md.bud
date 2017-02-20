@@ -9,17 +9,15 @@ const pkg = require('./package.json')
 const { commentsInFile } = require('ape-doc')
 const aglob = require('aglob')
 
-
 module.exports = readmeMdBud({
   pkg,
   repo: pkg.repository,
   sections: 'doc/guides/*.md.hbs',
   badges: {
+    // TODO OSS
+    // travis: true,
     travisCom: true,
     travisComToken: 'aeFzCpBZebyaRijpCFmm',
-    codeclimate: false,
-    codeclimateCoverage: false,
-    gemnasium: false,
     npm: true,
     standard: true
   },
@@ -29,8 +27,8 @@ module.exports = readmeMdBud({
     funcs: aglob.sync('lib/*.js')
       .filter((filename) => !/index\.js$/.test(filename))
       .map((filename) => {
-        let [comments] = commentsInFile(filename)
-        let [func] = comments.function
+        let [ comments ] = commentsInFile(filename)
+        let [ func ] = comments.function
         return {
           name: func.name,
           description: comments.description,

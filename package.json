@@ -17,34 +17,33 @@
     "email": "okunishinishi@gmail.com",
     "url": "http://okunishitaka.com"
   },
-  "license": "MIT",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/realglobe-Inc/clay-crypto/issues"
   },
   "homepage": "https://github.com/realglobe-Inc/clay-crypto#readme",
   "dependencies": {
-    "clay-constants": "^0.3.7",
+    "clay-constants": "^0.6.2",
     "co": "^4.6.0",
     "cryptico": "^1.0.2",
-    "debug": "^2.3.2"
+    "debug": "^2.6.1"
   },
   "devDependencies": {
-    "aglob": "^1.1.1",
-    "amocha": "^1.0.16",
+    "aglob": "^2.0.1",
+    "amocha": "^2.0.0",
     "ape-doc": "^2.0.4",
     "ape-formatting": "^1.0.2",
     "ape-releasing": "^4.0.4",
-    "ape-reporting": "^3.0.2",
     "ape-tasking": "^4.0.9",
     "ape-tmpl": "^5.0.20",
-    "ape-updating": "^4.0.5",
+    "ape-updating": "^4.1.0",
     "coz": "^6.0.20",
     "injectmock": "^2.0.0",
-    "sg-travis": "^1.1.33"
+    "sugos-travis": "^2.0.7"
   },
   "engines": {
     "node": ">=6",
-    "npm": ">=3"
+    "npm": ">=4"
   },
   "publishConfig": {
     "registry": "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-local"

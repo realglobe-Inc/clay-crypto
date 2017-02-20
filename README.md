@@ -82,8 +82,9 @@ const {
 {
   const { publicKey, privateKey } = generate('', 2048)
   let encrypted = encrypt('This is the message', privateKey)
+  let decrypted = decrypt(encrypted, publicKey)
 
-  let decrypted = decrypt(encrypt, publicKey)
+  console.log(decrypted)
 }
 
 ```
@@ -120,7 +121,7 @@ Available functions
 
 License
 -------
-This software is released under the [MIT License](https://github.com/realglobe-Inc/clay-crypto/blob/master/LICENSE).
+This software is released under the [Apache-2.0 License](https://github.com/realglobe-Inc/clay-crypto/blob/master/LICENSE).
 
 <!-- LICENSE End -->
 
@@ -133,8 +134,10 @@ Links
 
 + [ClayDB][clay_d_b_url]
 + [cryptico][cryptico_url]
++ [Realglobe, Inc.][realglobe,_inc__url]
 
 [clay_d_b_url]: https://github.com/realglobe-Inc/claydb
 [cryptico_url]: https://github.com/wwwtyro/cryptico
+[realglobe,_inc__url]: http://realglobe.jp
 
 <!-- Links End -->
