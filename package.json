@@ -26,8 +26,8 @@
     "clay-constants": "^1.3.2",
     "co": "^4.6.0",
     "debug": "^2.6.1",
+    "keypair": "^1.0.1",
     "objnest": "^3.0.9",
-    "ursa": "^0.9.4",
     "uuid": "^3.0.1"
   },
   "devDependencies": {

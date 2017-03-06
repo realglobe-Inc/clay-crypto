@@ -24,7 +24,8 @@ describe('verify', function () {
   it('Verify', () => co(function * () {
     const { privateKey, publicKey } = generate(1024)
     let signature = sign(privateKey, 'This is the text')
-    console.log(verify(publicKey, 'This is the text', signature))
+    ok(verify(publicKey, 'This is the text', signature))
+    ok(!verify(publicKey, 'This is not the text', signature))
   }))
 })
 
