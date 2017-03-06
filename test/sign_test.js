@@ -21,17 +21,17 @@ describe('sign', function () {
   }))
 
   it('Sign', () => co(function * () {
-    const { privateKey } = generate('', 1024)
-    let signed01 = sign('This is the text', privateKey, {})
-    let signed02 = sign('This is the text', privateKey, {})
-    assert.equal(signed01, signed02)
+    const { privateKey } = generate(1024)
+    let signature01 = sign(privateKey, 'This is the text')
+    let signature02 = sign(privateKey, 'This is the text')
+    assert.equal(signature01, signature02)
   }))
 
   it('Sign an object', () => co(function * () {
-    const { privateKey } = generate('', 1024)
-    let signed01 = sign({ foo: 'This is foo' }, privateKey, {})
-    let signed02 = sign({ foo: 'This is foo' }, privateKey, {})
-    assert.equal(signed01, signed02)
+    const { privateKey } = generate(256)
+    let signature01 = sign(privateKey, { foo: 'This is foo' })
+    let signature02 = sign(privateKey, { foo: 'This is foo' })
+    assert.equal(signature01, signature02)
   }))
 })
 
