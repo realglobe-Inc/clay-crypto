@@ -103,11 +103,10 @@ Available functions
 
 | Signature | Description |
 | ---- | ----------- |
-| `decrypt(text, rsaKey) -> Object` | Decrypt text |
-| `encrypt(text, publicKey, signingKey) -> Object` | Encrypt text |
-| `generate(passphrase, bits) -> Array` | Generate RSA key |
-| `parse(-) -> RSAKey` | Parse RSAKey |
-| `sign(text, signingKey) -> string` | Create sign |
+| `generate(bits) -> Array` | Generate RSA key |
+| `sign(privateKey, text) -> string` | Create sign |
+| `stringify(value) -> string` | Stringify object |
+| `verify(publicKey, text, signature) -> boolean` | Verify text with signature |
 
 
 <!-- Section from "doc/guides/03.Functions.md.hbs" End -->
