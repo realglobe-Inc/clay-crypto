@@ -1,0 +1,31 @@
+/**
+ * Test case for verify.
+ * Runs with mocha.
+ */
+'use strict'
+
+const generate = require('../lib/generate.js')
+const sign = require('../lib/sign.js')
+const verify = require('../lib/verify.js')
+const { ok } = require('assert')
+const co = require('co')
+
+describe('verify', function () {
+  this.timeout(3000)
+
+  before(() => co(function * () {
+
+  }))
+
+  after(() => co(function * () {
+
+  }))
+
+  it('Verify', () => co(function * () {
+    const { privateKey, publicKey } = generate(1024)
+    let signature = sign(privateKey, 'This is the text')
+    console.log(verify(publicKey, 'This is the text', signature))
+  }))
+})
+
+/* global describe, before, after, it */

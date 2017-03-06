@@ -5,7 +5,7 @@
 'use strict'
 
 const sign = require('../lib/sign.js')
-const assert = require('assert')
+const { equal } = require('assert')
 const generate = require('../lib/generate.js')
 const co = require('co')
 
@@ -24,14 +24,14 @@ describe('sign', function () {
     const { privateKey } = generate(1024)
     let signature01 = sign(privateKey, 'This is the text')
     let signature02 = sign(privateKey, 'This is the text')
-    assert.equal(signature01, signature02)
+    equal(String(signature01), String(signature02))
   }))
 
   it('Sign an object', () => co(function * () {
-    const { privateKey } = generate(256)
+    const { privateKey } = generate(512)
     let signature01 = sign(privateKey, { foo: 'This is foo' })
     let signature02 = sign(privateKey, { foo: 'This is foo' })
-    assert.equal(signature01, signature02)
+    equal(String(signature01), String(signature02))
   }))
 })
 
