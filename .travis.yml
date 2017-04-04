@@ -2,13 +2,9 @@ language: node_js
 node_js:
 - '6'
 before_install:
-# TODO OSS
-# - npm i npm-cli-login -g
-# - npm-cli-login -u "${NPM_USER}" -p "${NPM_PASSWORD}" -e "${NPM_EMAIL}"
-# - npm who
-- echo "registry = https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual" > $HOME/.npmrc
-- curl -u${NPM_USER}:${NPM_PASSWORD} "https://realglobe.artifactoryonline.com/realglobe/api/npm/auth" >> $HOME/.npmrc
-- cat $HOME/.npmrc
+- npm i npm-cli-login -g
+- npm-cli-login -u "${NPM_USER}" -p "${NPM_PASSWORD}" -e "${NPM_EMAIL}"
+- npm who
 install:
 - npm install
 script:
@@ -18,4 +14,4 @@ script:
 after_success:
 - ./ci/travis/publish.js
 env:
-  secure: "tYt5YbAPw5wxwpLakg2R8ZUkEzpBsvN5bvwOT2Q/O0+NUjQXRKR29r6rk74qqnEMUl0M93b15mDsC+rQPHQro+hEdff+RdS8FK9WuFsQhRY5z2yFRE41GINjboq0xwxypGKmcQ7T+pOaMU4h1iVQ0Syv2RkZR9qjiLmf5woqB4thBp5zkf/plg1WaChLShXYZHBvWOl//IfIIQJYFrdZ9naFdXSD6VhCNkpXBlw2Vs6vs8O66aYURZ65PQ1GvR1QBxh7mYFI1qQKZbjaf6b0GyAP5LmwiciWTsAk5jHeXKQEPQvfIozSmGhvY8Poch6lnc95z6hRsnwAtBWnwMTd39aFSjwhXd+39Z+1ZkkH53hpTXhcicEgDsWFnuKF6u63fUR5xDmapHHgU1mRWxfWWrjLtEp+4Zy3zzAm8wazQNiyIjKMLW3kQHexctAZ4a/nnbEL9zDN6/HN5P5La5TBk2MdOFHSwAW9AEdRWpBp7E3Yjo6KktytOFJN08tzcdvRZzr9HndbJMMg5hGDn+KyH9nsvmtVcUDfPjgzdj4WAxadBOQI2pWu+ssKAK8/fuiTbO5cgV5QLYYZHrfRuSZAvi9s9H7D9zvn7uYqSFmtGcMnkktoTzdOT+QJqcBX6G8B/u1n6ME/nS70USUD0TPXNKAM4dRM9EXEQBu3CP/V0XQ="
+  secure: "B2cXK9iow6FQYKNZhcW4MoMXKE6EsPiwfHRVdU0XGjH2qEXgIaNfMEdwklE/TlZkyGKDd60Wg3gP1YdaUNjDBWOp2w/wc+XB7NR/tdI8sBXs0momb3G71tDSKDWLNwcf5OStTOlfDrFuy6G/r98KOeQ93wZjSvB8XdBQiKejpOYNZp+3XgQ0vkSM0cI7uP6OVaG/S6tL/ij4Ah0MMvReAv0UUAtF1rVqWIzbh+rMjK6McuMvTL/8krkE5zJe5x06/AMtdpTVO7dRzVUFg7JLzGTetUW1MAT3GXRqz3DVZRGuQZldVDehxvrfPee1G0xMlG9hCjOuyE9ImQLnfE/87JdOJtT6lhWspGkif3dBRkhgmT4v93DXy6qFAHJf/brhiVBdn5o90QY99GnSS1hemKs3ifbvXBEuJCMbXOKat4BD6BeQTmZIyOzaQXzfcHBu8nAhYkPfztoE46mux0rA5bDLWOvp0cHHYr29MEVAnC9j6wGqG96iLCwFoneyOcBrpoBgL7gcLv9Vpakjt0kPbozqcZseUuCnHQ7VYp+WWa74oxdfhGNIARYrhP3GPLOFw2HG4pVHfOYpU+S3SFFFjL2eliSHNq8lQ9n3hiKu9tSXdtguuMggrUaBNE8THpJrkDEkmeQOSmtuwMm1xZTJ03zO7x1ggk/XbXNx9bRnFYI="
