@@ -6,20 +6,20 @@
 
 const stringify = require('../lib/stringify.js')
 const { equal } = require('assert')
-const co = require('co')
+
 
 describe('stringify', function () {
   this.timeout(3000)
 
-  before(() => co(function * () {
+  before(async () => {
 
-  }))
+  })
 
-  after(() => co(function * () {
+  after(async () => {
 
-  }))
+  })
 
-  it('Stringify', () => co(function * () {
+  it('Stringify', async () => {
     equal(
       stringify({ foo: 'bar' }),
       stringify({ foo: 'bar' })
@@ -29,7 +29,7 @@ describe('stringify', function () {
       stringify({ foo: 'bar', baz: 'quz' }),
       stringify({ baz: 'quz', foo: 'bar' })
     )
-  }))
+  })
 })
 
 /* global describe, before, after, it */

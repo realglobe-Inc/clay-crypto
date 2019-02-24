@@ -7,32 +7,32 @@
 const sign = require('../lib/sign.js')
 const { equal } = require('assert')
 const generate = require('../lib/generate.js')
-const co = require('co')
+
 
 describe('sign', function () {
   this.timeout(3000)
 
-  before(() => co(function * () {
+  before(async () => {
 
-  }))
+  })
 
-  after(() => co(function * () {
+  after(async () => {
 
-  }))
+  })
 
-  it('Sign', () => co(function * () {
+  it('Sign', async () => {
     const { privateKey } = generate(1024)
     let signature01 = sign(privateKey, 'This is the text')
     let signature02 = sign(privateKey, 'This is the text')
     equal(String(signature01), String(signature02))
-  }))
+  })
 
-  it('Sign an object', () => co(function * () {
+  it('Sign an object', async () => {
     const { privateKey } = generate(512)
     let signature01 = sign(privateKey, { foo: 'This is foo' })
     let signature02 = sign(privateKey, { foo: 'This is foo' })
     equal(String(signature01), String(signature02))
-  }))
+  })
 })
 
 /* global describe, before, after, it */
